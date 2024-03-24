@@ -1,6 +1,7 @@
 //the net salary calculator
 let basicSalary;
-let benefits;
+let benefits = [];
+
 
 const payRates = [
   { min: 0, max: 24000, rate: 10 },
@@ -86,6 +87,11 @@ let pensionablePay = 9000; // example of a pensionablePay
 let tier = "II"; // the example of a tier
 let nssfDeduction = CalculateNssfAmount(pensionablePay, tier);
 console.log("Nssf Deduction:", nssfDeduction);
+
+//calculating benefits
+function calculateBenefits(...benefits) {
+    return (benefits.reduce((sum, benefits) => sum + benefits, 0)) * 0.15
+}
 
 //gross salary
 
